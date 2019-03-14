@@ -1,5 +1,6 @@
 package com.wenance.webhook.consumer.controller;
 
+import com.wenance.webhook.consumer.model.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,8 +14,9 @@ public class WebhookConsumer {
 
     @GetMapping(path = "/webhook")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<?> health() {
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Response> health() {
+        Response response = new Response("ok");
+        return ResponseEntity.ok(response);
     }
 
 }
