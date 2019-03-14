@@ -15,7 +15,7 @@ public class WebhookConsumer {
     @GetMapping(path = "/webhook")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Response> health() {
-        Response response = new Response("ok");
+        Response response = new Response("test auto deploy");
         return ResponseEntity.ok(response);
     }
 
